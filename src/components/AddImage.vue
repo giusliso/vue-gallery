@@ -21,7 +21,7 @@
                   type="text"
                   class="form-control"
                   v-model="description" id="description"
-                  placeholder="Insert URL">
+                  placeholder="Insert Description">
               <label for="description">Image Description</label>
             </div>
             <button type="submit" class="btn btn-primary">Send</button>
