@@ -1,10 +1,7 @@
 <template>
   <div>
-    <div class="text-center mt-xxl-5">
-      <div class="spinner-grow text-primary spinner" role="status" v-if="images === undefined || images.length === 0">
-        <span class="visually-hidden">Loading...</span>
-      </div>
-
+    <div class="d-flex justify-content-center mb-3" v-if="!images">
+      <b-spinner variant="primary"  label="Loading..."></b-spinner>
     </div>
 
     <div>
@@ -25,13 +22,15 @@
         <b-carousel-slide
             v-for="(image, index) in images"
             v-bind:key="index"
-            :caption="index"
+            :caption="image.description"
             :text="image.value.description"
             :img-src="image.value.url"
         ></b-carousel-slide>
       </b-carousel>
 
+      <div><b-button style="margin-top: 10px" variant="danger" @click="removeImg(images[slide])">Delete Image</b-button></div>
       <p class="mt-4">
+        Description: <strong> {{ images[slide].value.description }} </strong><br>
         Slide #: {{ slide }}<br>
         Sliding: {{ sliding }}
       </p>

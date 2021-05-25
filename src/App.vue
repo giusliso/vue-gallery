@@ -1,8 +1,6 @@
 <template>
   <div id="app">
     <div class="container">
-      <div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/6212231"><script src="./embed.js"></script></div>
-
       <AddImage @onImageAdding="addImage($event)"/>
       <ImageGallery @onDeleteImage = "deleteImage($event)" :images="images"/>
     </div>
